@@ -62,6 +62,8 @@ Apple provides a good introduction to [creating your first pass](https://develop
 
 While you can manually create passes it is best to have a backend server create the pass and provide it to the app. This is because passes are digitally signed using a Pass Type ID and Production Certificate created in your Apple Developer Account.
 
+You can create an Apple pass with a nodejs backend by following this [video tutorial](https://www.youtube.com/watch?v=rJZdPoXHtzI).
+
 ## Changing Passes
 A pass can change over time. For example: an airline pass can be changed if a plane is delayed, a ID Card can change after it has expired or a ticket can change when it has been transferred to another person.
 
