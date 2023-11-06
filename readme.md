@@ -1,7 +1,5 @@
 # Digital Passes
 
-
-
 ## Adding to Apple Wallet
 
 Digital passes for Apple Wallet are a file format called `pkpass`. 
@@ -68,4 +66,13 @@ You can create an Apple pass with a nodejs backend by following this [video tuto
 A pass can change over time. For example: an airline pass can be changed if a plane is delayed, a ID Card can change after it has expired or a ticket can change when it has been transferred to another person.
 
 Apple provides a way through push notifications to handle updates with passes. See [Working with Passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1).
+
+## Adding to Google Wallet
+
+Google Wallet has prerequisites for a Google Wallet API issuer account and GCP account (see [documentation](https://developers.google.com/wallet/generic/web/prerequisites)).
+
+In your backend you will [authenticate and authorize](https://developers.google.com/wallet/generic/web) and [create a pass object](https://developers.google.com/wallet/generic/web#creating_a_passes_object).
+
+In your application you can [add a pass to Google Wallet](https://developers.google.com/wallet/generic/web#saving_to) which will generate a JWT token which can then be used in a "Add to Google Wallet" link which is in the format:
+`https://pay.google.com/gp/v/save/{token}`
 
