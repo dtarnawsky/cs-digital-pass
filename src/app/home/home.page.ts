@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 import { WalletService } from '../wallet.service';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,13 @@ export class HomePage {
   async download() {
     try {
       this.busy = true;
-      const data = await this.walletService.get('/assets/example2.pkpass');
-      await this.walletService.addToWallet(data);
+      if (Capacitor.getPlatform() == 'ios') {
+        const data = await this.walletService.get('/assets/example2.pkpass');
+        await this.walletService.addToWallet(data);
+      } else {
+        // Get token from the backend
+        window.open(`https://pay.google.com/gp/v/save/${token}`, '_target');
+      }
     } catch (error: any) {
       alert(error.message)
     } finally {
