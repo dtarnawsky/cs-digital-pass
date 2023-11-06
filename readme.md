@@ -58,4 +58,12 @@ You should see a standard Apple "add pass" dialog with details of your pass. The
 
 ## Creating Apple Passes
 
-TBA Creating pkpass files
+Apple provides a good introduction to [creating your first pass](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/YourFirst.html#//apple_ref/doc/uid/TP40012195-CH2-SW1), [designing passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Creating.html#//apple_ref/doc/uid/TP40012195-CH4-SW1) and [distributing passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/DistributingPasses.html#//apple_ref/doc/uid/TP40012195-CH11-SW1).
+
+While you can manually create passes it is best to have a backend server create the pass and provide it to the app. This is because passes are digitally signed using a Pass Type ID and Production Certificate created in your Apple Developer Account.
+
+## Changing Passes
+A pass can change over time. For example: an airline pass can be changed if a plane is delayed, a ID Card can change after it has expired or a ticket can change when it has been transferred to another person.
+
+Apple provides a way through push notifications to handle updates with passes. See [Working with Passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1).
+
