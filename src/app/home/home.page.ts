@@ -23,6 +23,7 @@ export class HomePage {
         await this.walletService.addToWallet(data);
       } else {
         // Get token from the backend
+        const token = ''; // TODO need to generate token
         window.open(`https://pay.google.com/gp/v/save/${token}`, '_target');
       }
     } catch (error: any) {

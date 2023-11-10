@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'cs.digital.pass',
   appName: 'cs-digital-pass',
-  webDir: 'www',
+  webDir: 'www/browser',
   server: {
     androidScheme: 'https'
   }
