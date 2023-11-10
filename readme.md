@@ -1,6 +1,12 @@
 # Digital Passes
 
-## Adding to Apple Wallet
+This repository contains information about developing Digital Passes that can be used with Apple Wallet and Google Wallet.
+
+The following folders are used:
+- **app** - This contains an example Capacitor application that adds an Apple Wallet Pass or Google Wallet Pass.
+- **backend** - This contains a Cloudflare Worker backend (node) that create the digital pass.
+
+# Apple Wallet Passes
 
 Digital passes for Apple Wallet comes in the form of a file format called `pkpass`. 
 
@@ -66,6 +72,8 @@ You can create an Apple pass with a nodejs backend by following this [video tuto
 A pass can change over time. For example: an airline pass can be changed if a plane is delayed, a ID Card can change after it has expired or a ticket can change when it has been transferred to another person.
 
 Apple provides a way through push notifications to handle updates with passes. See [Working with Passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1).
+
+# Google Wallet Passes
 
 ## Adding to Google Wallet
 
