@@ -1,7 +1,7 @@
 # Digital Passes
 
 ## Creating Apple Passes
-This sample Cloudfare Worker shows how to create an Apple Pass in nodejs. Apple documents the manual [contains and design of a pass](https://developer.apple.com/documentation/walletpasses/creating_the_source_for_a_pass) but you can also use [Passkit Visual Designer](https://pkvd.app/).
+This sample Cloudfare Worker shows how to create an Apple Pass in [NodeJS](https://nodejs.org/). Apple documents the manual [content and design of a pass](https://developer.apple.com/documentation/walletpasses/creating_the_source_for_a_pass) but there are 3rd party designers like [Passkit Visual Designer](https://pkvd.app/) to help.
 
 In the sample project the `model` folder contains the necessary images and `pass.json` file that defines the structure of the pass.
 

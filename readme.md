@@ -4,7 +4,7 @@ This repository contains information about developing Digital Passes that can be
 
 The following folders are used:
 - **app** - This contains an example Capacitor application that adds an Apple Wallet Pass or Google Wallet Pass.
-- **backend** - This contains a Cloudflare Worker backend (node) that creates the digital pass.
+- [**backend**](./backend/readme.md) - This contains a Cloudflare Worker backend (node) that creates the digital pass.
 
 # Apple Wallet Passes
 
