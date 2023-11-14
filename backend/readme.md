@@ -18,10 +18,10 @@ Visit your [Apple Developer Account](https://developer.apple.com/account/resourc
 
 Take this value and paste it in `index.ts` in the variable `passTypeIdentifier` or paste it into the `passTypeIdentifier` property in `models/pass.json`.
 
-### 1. Set Team ID
+### 2. Set Team ID
 In `index.ts` set the variable `teamIdentifier` to the team ID found in your Apple Developer Account.
 
-### 1. Create a Certificate and Key
+### 3. Create a Certificate and Key
 
 First create a private key via the command line:
 ```bash
@@ -45,7 +45,7 @@ We need to convert this `cer` file to `pem` format:
 openssl x509 -inform DER -outform PEM -in pass.cer -out pass.pem
 ```
 
-### 1. Download the WWDR Certificate
+### 4. Download the WWDR Certificate
 You'll need the WWDR (Apple WorldWide Developer Relations) G4 Certificate which can be downloaded [here](https://www.apple.com/certificateauthority/).
 
 You'll need to convert this `cer` to `pem` format as well:
