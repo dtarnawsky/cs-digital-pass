@@ -18,10 +18,10 @@ Visit your [Apple Developer Account](https://developer.apple.com/account/resourc
 
 Take this value and paste it in `index.ts` in the variable `passTypeIdentifier` or paste it into the `passTypeIdentifier` property in `models/pass.json`.
 
-### 2. Set Team ID
+### 1. Set Team ID
 In `index.ts` set the variable `teamIdentifier` to the team ID found in your Apple Developer Account.
 
-### 2. Create a Certificate and Key
+### 1. Create a Certificate and Key
 
 First create a private key via the command line:
 ```bash
@@ -45,7 +45,7 @@ We need to convert this `cer` file to `pem` format:
 openssl x509 -inform DER -outform PEM -in pass.cer -out pass.pem
 ```
 
-### 3. Download the WWDR Certificate
+### 1. Download the WWDR Certificate
 You'll need the WWDR (Apple WorldWide Developer Relations) G4 Certificate which can be downloaded [here](https://www.apple.com/certificateauthority/).
 
 You'll need to convert this `cer` to `pem` format as well:
@@ -74,7 +74,7 @@ You can now test your cloudflare worker url for a pass in the front end applicat
 - Your application needing CORs access to download the `pkpass`
 
 ### References
-See [ref](https://github.com/alexandercerutti/passkit-generator/tree/master/examples/cloudflare-worker) for similar  and addiitonal information.
+See [the passkit generator repo](https://github.com/alexandercerutti/passkit-generator/tree/master/examples/cloudflare-worker) for similar examles and addiitonal information.
 
 #### Apple Documentation
 Apple provides a good introduction to [creating your first pass](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/YourFirst.html#//apple_ref/doc/uid/TP40012195-CH2-SW1), [designing passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Creating.html#//apple_ref/doc/uid/TP40012195-CH4-SW1) and [distributing passes](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/DistributingPasses.html#//apple_ref/doc/uid/TP40012195-CH11-SW1).
