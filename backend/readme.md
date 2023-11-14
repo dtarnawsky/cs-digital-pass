@@ -74,7 +74,7 @@ You can now test your cloudflare worker url for a pass in the front end applicat
 - Your application needing CORs access to download the `pkpass`
 
 If the pass correctly generates and downloads you should see a screen like below after a second or two:
-[![App Screenshot](./assets/pass.png)]
+[![App Screenshot](./assets/example-pass.png)]
 
 ### References
 See [the passkit generator repo](https://github.com/alexandercerutti/passkit-generator/tree/master/examples/cloudflare-worker) for similar examles and addiitonal information.
