@@ -19,7 +19,13 @@ export class HomePage {
     try {
       this.busy = true;
       if (Capacitor.getPlatform() == 'ios') {
-        const data = await this.walletService.get('/assets/example2.pkpass');
+        // Uncomment for an example where the pkpass file is stored with the app
+        //const data = await this.walletService.get('/assets/example2.pkpass');
+
+        // This line below will download a pkpass from a backend service we created
+        const data = await this.walletService.get('https://ionic-pass-example.damiantarnawsky.workers.dev');
+
+        // Add the pass to Apple Wallet
         await this.walletService.addToWallet(data);
       } else {
         // Get token from the backend

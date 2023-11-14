@@ -36,11 +36,15 @@ export default {
 		env: Env,
 		ctx: ExecutionContext,
 	): Promise<Response> {
+		if (request.method == 'OPTIONS') {
+			return handleOptions(request);
+		}
 		return generatePass(env);
 	},
 };
 
 async function generatePass(env: Env) {
+	console.log(`Generating pass`);
 	const pass = new PKPass(
 		{
 			"icon.png": Buffer.from(icon),
@@ -56,10 +60,10 @@ async function generatePass(env: Env) {
 			wwdr: env.WWDR,
 		},
 		{
-			description: "Example Pass generated through a cloudflare worker",
+			description: "Ionic Pass",
 			serialNumber: "81592CQ7838",
-			passTypeIdentifier: "io.ionic.digitalpass",
-			teamIdentifier: "F53WB8AE67",
+			passTypeIdentifier: "pass.io.ionic.example",
+			teamIdentifier: "N3B3WKDZND",
 			organizationName: "Apple Inc.",
 			foregroundColor: "rgb(255, 255, 255)",
 			backgroundColor: "rgb(60, 65, 76)",
@@ -73,13 +77,13 @@ async function generatePass(env: Env) {
 	pass.headerFields.push(
 		{
 			key: "header1",
-			label: "Data",
-			value: "25 mag",
+			label: "Date",
+			value: "14th Nov",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 		{
 			key: "header2",
-			label: "Volo",
+			label: "UID",
 			value: "EZY997",
 			textAlignment: "PKTextAlignmentCenter",
 		},
@@ -88,14 +92,14 @@ async function generatePass(env: Env) {
 	pass.primaryFields.push(
 		{
 			key: "IATA-source",
-			value: "NAP",
-			label: "Napoli",
+			value: "LAS",
+			label: "Las Vegas",
 			textAlignment: "PKTextAlignmentLeft",
 		},
 		{
 			key: "IATA-destination",
-			value: "VCE",
-			label: "Venezia Marco Polo",
+			value: "LAX",
+			label: "Los Angeles",
 			textAlignment: "PKTextAlignmentRight",
 		},
 	);
@@ -103,26 +107,26 @@ async function generatePass(env: Env) {
 	pass.secondaryFields.push(
 		{
 			key: "secondary1",
-			label: "Imbarco chiuso",
+			label: "Boarding",
 			value: "18:40",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 		{
 			key: "sec2",
-			label: "Partenze",
+			label: "Departing",
 			value: "19:10",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 		{
 			key: "sec3",
-			label: "SB",
-			value: "Sì",
+			label: "Group",
+			value: "A",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 		{
 			key: "sec4",
-			label: "Imbarco",
-			value: "Anteriore",
+			label: "Special",
+			value: "1 Carry On",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 	);
@@ -130,14 +134,14 @@ async function generatePass(env: Env) {
 	pass.auxiliaryFields.push(
 		{
 			key: "aux1",
-			label: "Passeggero",
-			value: "MR. WHO KNOWS",
+			label: "Passenger",
+			value: "John Smith",
 			textAlignment: "PKTextAlignmentLeft",
 		},
 		{
 			key: "aux2",
-			label: "Posto",
-			value: "1A*",
+			label: "Seat",
+			value: "1A",
 			textAlignment: "PKTextAlignmentCenter",
 		},
 	);
@@ -211,10 +215,31 @@ async function generatePass(env: Env) {
 		},
 	);
 
+	console.log(`Returning pass object`);
 	return new Response(pass.getAsBuffer(), {
 		headers: {
 			"Content-type": pass.mimeType,
 			"Content-disposition": `attachment; filename=myPass.pkpass`,
+			...corsHeaders()
 		},
 	});
+}
+
+function handleOptions(request: Request): Response {
+	const origin = request.headers.get('Referer')!;
+	return new Response('OK', {
+		headers:
+		{
+			...corsHeaders()
+		}
+	});
+}
+
+function corsHeaders(): any {
+	return {
+		'Access-Control-Allow-Origin': "*",
+		"Access-Control-Allow-Methods": "GET,HEAD,POST,DELETE,OPTIONS",
+		"Access-Control-Allow-Headers": "*",
+		"Access-Control-Max-Age": "86400",
+	};
 }

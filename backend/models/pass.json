@@ -1,6 +1,6 @@
 {
 	"formatVersion": 1,
-	"passTypeIdentifier": "pass.com.passkitgenerator",
+	"passTypeIdentifier": "pass.io.ionic.example",
 	"serialNumber": "nmyuxofgna",
 	"teamIdentifier": "F53WB8AE67",
 	"webServiceURL": "https://192.168.1.254:80/",

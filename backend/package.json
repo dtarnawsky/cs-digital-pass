@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"example": "npx wrangler dev"
+		"example": "npx wrangler dev",
+		"deploy": "npx wrangler deploy"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "4.20231025.0",
