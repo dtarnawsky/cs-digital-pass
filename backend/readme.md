@@ -73,6 +73,9 @@ You can now test your cloudflare worker url for a pass in the front end applicat
 - Your `teamIdentifier` not matching your Team Identifier in your Apple Developer Account
 - Your application needing CORs access to download the `pkpass`
 
+If the pass correctly generates and downloads you should see a screen like below after a second or two:
+[![App Screenshot](./assets/pass.png)]
+
 ### References
 See [the passkit generator repo](https://github.com/alexandercerutti/passkit-generator/tree/master/examples/cloudflare-worker) for similar examles and addiitonal information.
 
