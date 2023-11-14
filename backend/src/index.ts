@@ -2,11 +2,11 @@ import { PKPass } from "passkit-generator";
 import { Buffer } from "node:buffer";
 
 /** Assets are handled by Wrangler by specifying the rule inside wrangler.toml */
-import icon from "../../../models/exampleBooking.pass/icon.png";
-import icon2x from "../../../models/exampleBooking.pass/icon@2x.png";
-import footer from "../../../models/exampleBooking.pass/footer.png";
-import footer2x from "../../../models/exampleBooking.pass/footer@2x.png";
-import background2x from "../../../models/examplePass.pass/background@2x.png";
+import icon from "../models/icon.png";
+import icon2x from "../models/icon@2x.png";
+import footer from "../models/footer.png";
+import footer2x from "../models/footer@2x.png";
+import background2x from "../models/background@2x.png";
 
 export interface Env {
 	/**
@@ -58,7 +58,7 @@ async function generatePass(env: Env) {
 		{
 			description: "Example Pass generated through a cloudflare worker",
 			serialNumber: "81592CQ7838",
-			passTypeIdentifier: "pass.com.passkitgenerator",
+			passTypeIdentifier: "io.ionic.digitalpass",
 			teamIdentifier: "F53WB8AE67",
 			organizationName: "Apple Inc.",
 			foregroundColor: "rgb(255, 255, 255)",
