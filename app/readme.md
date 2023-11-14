@@ -53,4 +53,6 @@ import { CapacitorPassToWallet } from 'capacitor-pass-to-wallet';
 await CapacitorPassToWallet.addToWallet({ base64: data });
 ```
 
-You should see a standard Apple "add pass" dialog with details of your pass. The user can click "Add" to add to Apple Wallet.
+You should see a standard Apple "add pass" dialog with details of your pass (example below). The user can click "Add" to add to Apple Wallet.
+
+![App Screenshot](../backend/assets/example-pass.png)
